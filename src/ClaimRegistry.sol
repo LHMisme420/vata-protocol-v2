@@ -2,9 +2,11 @@
 pragma solidity ^0.8.20;
 
 import "./VATAToken.sol";
+import "./AnchorRegistry.sol";
 
 contract ClaimRegistry {
     VATAToken public immutable token;
+    AnchorRegistry public immutable anchors;
 
     enum Status { NONE, PENDING, CHALLENGED, FRAUD, FINAL }
 
@@ -23,6 +25,9 @@ contract ClaimRegistry {
     uint96 public minStake = 1_000 ether;
     uint96 public minChallengeBond = 500 ether;
 
+    // NEW: require N anchors before FINAL
+    uint8 public minAnchors = 3;
+
     struct Challenge {
         address challenger;
         uint96 bond;
@@ -36,17 +41,19 @@ contract ClaimRegistry {
     event ClaimFinalized(bytes32 indexed claimId);
     event ClaimSlashed(bytes32 indexed claimId, address indexed challenger, uint256 reward);
 
-    constructor(address tokenAddress) {
+    constructor(address tokenAddress, address anchorRegistry) {
         token = VATAToken(tokenAddress);
+        anchors = AnchorRegistry(anchorRegistry);
     }
 
-    // v0 params are open; governance later
-    function setParams(uint40 _challengeWindow, uint96 _minStake, uint96 _minBond) external {
+    function setParams(uint40 _challengeWindow, uint96 _minStake, uint96 _minBond, uint8 _minAnchors) external {
         require(_challengeWindow >= 1 hours && _challengeWindow <= 30 days, "bad window");
         require(_minStake > 0 && _minBond > 0, "bad mins");
+        require(_minAnchors > 0 && _minAnchors <= 32, "bad anchors");
         challengeWindow = _challengeWindow;
         minStake = _minStake;
         minChallengeBond = _minBond;
+        minAnchors = _minAnchors;
     }
 
     function submitClaim(
@@ -92,8 +99,7 @@ contract ClaimRegistry {
         emit ClaimChallenged(claimId, msg.sender, bondAmount);
     }
 
-    // v0 placeholder: slash is callable during window once challenged.
-    // v1.1: require fraud proof (invalid proof bundle / mismatch against artifactRoot).
+    // v0 placeholder: slashing not proof-gated yet (next step is VerifierRouter)
     function slashClaim(bytes32 claimId) external {
         Claim storage c = claims[claimId];
         Challenge memory ch = challenges[claimId];
@@ -115,6 +121,9 @@ contract ClaimRegistry {
         Claim storage c = claims[claimId];
         require(c.status == Status.PENDING, "not pending");
         require(block.timestamp > c.createdAt + challengeWindow, "window open");
+
+        // NEW: require cross-chain anchoring quorum
+        require(anchors.anchorCount(claimId) >= minAnchors, "insufficient anchors");
 
         c.status = Status.FINAL;
         require(token.transfer(c.submitter, c.stake), "return transfer failed");
