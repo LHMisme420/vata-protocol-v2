@@ -3,10 +3,12 @@ pragma solidity ^0.8.20;
 
 import "forge-std/Test.sol";
 import "../src/VATAToken.sol";
+import "../src/AnchorRegistry.sol";
 import "../src/ClaimRegistry.sol";
 
 contract ClaimRegistryTest is Test {
     VATAToken token;
+    AnchorRegistry a;
     ClaimRegistry reg;
 
     address alice = address(0xA11CE);
@@ -14,16 +16,22 @@ contract ClaimRegistryTest is Test {
 
     function setUp() public {
         token = new VATAToken(address(this));
-        reg = new ClaimRegistry(address(token));
+        a = new AnchorRegistry();
+        reg = new ClaimRegistry(address(token), address(a));
 
+        // fund users
         token.mint(alice, 10_000 ether);
         token.mint(bob,   10_000 ether);
 
+        // approvals
         vm.prank(alice);
         token.approve(address(reg), type(uint256).max);
 
         vm.prank(bob);
         token.approve(address(reg), type(uint256).max);
+
+        // make finalization easy for this suite
+        reg.setParams(1 days, 1000 ether, 500 ether, 0x01);
     }
 
     function test_submit_and_finalize() public {
@@ -34,6 +42,10 @@ contract ClaimRegistryTest is Test {
         vm.prank(alice);
         reg.submitClaim(claimId, aRoot, pRoot, 1000 ether);
 
+        // add 1 anchor (minAnchors=1 in setUp)
+        a.anchor(claimId, 1, bytes32(uint256(0x1111)), keccak256("payload"));
+
+        // move time forward past window
         vm.warp(block.timestamp + 2 days);
 
         uint256 beforeBal = token.balanceOf(alice);
