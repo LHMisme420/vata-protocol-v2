@@ -1,0 +1,8 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "token": "0xfE1f359538def30267dc2d03C6574855947Ad48E",
+  "anchors": "0x1a962801DD52b5E072dF771baA476bFd5b96D0A7",
+  "router": "0xeEfd39477c3a819aF5531512e0D8368384888272",
+  "registry": "0x78eC29a3914cf8dd7093555FB18445914f717e6C"
+}
