@@ -9,7 +9,8 @@ contract InvariantRegistry {
         bool active;
     }
 
-    mapping(bytes32 => Invariant) public invariants;
+    // NOTE: name is NOT "invariants" to avoid Foundry invariant-test auto-detection
+    mapping(bytes32 => Invariant) public inv;
 
     event InvariantUpserted(bytes32 indexed id, bytes32 invariantHash, uint32 version, bool active);
     event InvariantDisabled(bytes32 indexed id);
@@ -21,12 +22,12 @@ contract InvariantRegistry {
         uint32 version,
         bool active
     ) external {
-        invariants[id] = Invariant(invariantHash, description, version, active);
+        inv[id] = Invariant(invariantHash, description, version, active);
         emit InvariantUpserted(id, invariantHash, version, active);
     }
 
     function disableInvariant(bytes32 id) external {
-        invariants[id].active = false;
+        inv[id].active = false;
         emit InvariantDisabled(id);
     }
 }
