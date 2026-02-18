@@ -3,10 +3,12 @@ pragma solidity ^0.8.20;
 
 import "./VATAToken.sol";
 import "./AnchorRegistry.sol";
+import "./VerifierRouter.sol";
 
 contract ClaimRegistry {
     VATAToken public immutable token;
     AnchorRegistry public immutable anchors;
+    VerifierRouter public immutable router;
 
     enum Status { NONE, PENDING, CHALLENGED, FRAUD, FINAL }
 
@@ -24,9 +26,7 @@ contract ClaimRegistry {
     uint40 public challengeWindow = 1 days;
     uint96 public minStake = 1_000 ether;
     uint96 public minChallengeBond = 500 ether;
-
-    // NEW: require N anchors before FINAL
-    uint8 public minAnchors = 3;
+    uint8  public minAnchors = 3;
 
     struct Challenge {
         address challenger;
@@ -39,11 +39,12 @@ contract ClaimRegistry {
     event ClaimSubmitted(bytes32 indexed claimId, address indexed submitter, bytes32 artifactRoot, bytes32 proofBundleRoot, uint96 stake);
     event ClaimChallenged(bytes32 indexed claimId, address indexed challenger, uint96 bond);
     event ClaimFinalized(bytes32 indexed claimId);
-    event ClaimSlashed(bytes32 indexed claimId, address indexed challenger, uint256 reward);
+    event ClaimSlashed(bytes32 indexed claimId, address indexed challenger, uint256 reward, uint32 systemId);
 
-    constructor(address tokenAddress, address anchorRegistry) {
+    constructor(address tokenAddress, address anchorRegistry, address verifierRouter) {
         token = VATAToken(tokenAddress);
         anchors = AnchorRegistry(anchorRegistry);
+        router = VerifierRouter(verifierRouter);
     }
 
     function setParams(uint40 _challengeWindow, uint96 _minStake, uint96 _minBond, uint8 _minAnchors) external {
@@ -99,14 +100,19 @@ contract ClaimRegistry {
         emit ClaimChallenged(claimId, msg.sender, bondAmount);
     }
 
-    // v0 placeholder: slashing not proof-gated yet (next step is VerifierRouter)
-    function slashClaim(bytes32 claimId) external {
+    // Proof-gated slashing:
+    // challenger provides a proof that verifies under systemId for the publicInputsHash.
+    function slashClaim(bytes32 claimId, uint32 systemId, bytes calldata proof) external {
         Claim storage c = claims[claimId];
         Challenge memory ch = challenges[claimId];
 
         require(c.status == Status.CHALLENGED, "not challenged");
         require(ch.exists, "no challenge");
+        require(msg.sender == ch.challenger, "only challenger");
         require(block.timestamp <= c.createdAt + challengeWindow, "too late");
+
+        bytes32 publicInputsHash = keccak256(abi.encodePacked(claimId, c.artifactRoot, c.proofBundleRoot));
+        require(router.verify(systemId, proof, publicInputsHash), "fraud proof invalid");
 
         c.status = Status.FRAUD;
         delete challenges[claimId];
@@ -114,15 +120,13 @@ contract ClaimRegistry {
         uint256 reward = uint256(c.stake) + uint256(ch.bond);
         require(token.transfer(ch.challenger, reward), "reward transfer failed");
 
-        emit ClaimSlashed(claimId, ch.challenger, reward);
+        emit ClaimSlashed(claimId, ch.challenger, reward, systemId);
     }
 
     function finalizeClaim(bytes32 claimId) external {
         Claim storage c = claims[claimId];
         require(c.status == Status.PENDING, "not pending");
         require(block.timestamp > c.createdAt + challengeWindow, "window open");
-
-        // NEW: require cross-chain anchoring quorum
         require(anchors.anchorCount(claimId) >= minAnchors, "insufficient anchors");
 
         c.status = Status.FINAL;
