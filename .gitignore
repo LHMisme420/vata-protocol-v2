@@ -1,0 +1,9 @@
+﻿node_modules/
+target/
+out/
+build/
+.env
+*.log
+*.wtns
+*.zkey
+*.proof
