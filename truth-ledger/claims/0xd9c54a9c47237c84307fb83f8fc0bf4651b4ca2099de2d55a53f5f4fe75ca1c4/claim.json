@@ -1,0 +1,15 @@
+{
+  "vata_claim_version": "1.0",
+  "domain": "ai.forensics",
+  "statement": "Model output contains poisoned reasoning",
+  "claim_id": "0xd9c54a9c47237c84307fb83f8fc0bf4651b4ca2099de2d55a53f5f4fe75ca1c4",
+  "claimant": "0x32506a2b5bd991c904ca733CBf6f8FD0183BA6Ce",
+  "challenger": "0x3eaa7a10dB197a0A48Df5FC4410095525D73AA60",
+  "stake_vata": "1000",
+  "bond_vata": "500",
+  "resolution": "challenger_wins",
+  "payout_vata": "2000",
+  "stake_tx": "0xd5d8c396c03e52858422fd117ad8823e668bacff4eaa326375492268ce01e0ab",
+  "bond_tx": "0x6c96e2d8f9577b9573d4bf0913c894168a44204a3131d483f11366ab5de0e22e",
+  "payout_tx": "0xf6eba090caec36fe30b37bdbdcd778cefa3e8a0d9ae8b6bde590a5749f5e8298"
+}
