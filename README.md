@@ -1,3 +1,7 @@
+![Verify Truth Ledger](https://github.com/LHMisme420/vata-protocol-v2/actions/workflows/verify-ledger.yml/badge.svg)
+
+
+
 ## Truth Settlement Layer (TSL)
 
 VATA is a blockchain-native system for economically settling contested factual claims.
