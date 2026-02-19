@@ -35,6 +35,9 @@ If you believe a claim in the Truth Ledger is incorrect, you may post a bonded c
 
 Truth is not declared.
 Truth is economically settled.
+### Roadmap
+
+VATA claims and challenges will execute on Optimism and Arbitrum for scalable dispute activity, with periodic anchoring and final economic settlement on Ethereum L1.
 
 
 ```shell
@@ -83,4 +86,6 @@ $ cast <subcommand>
 $ forge --help
 $ anvil --help
 $ cast --help
-```
+```### Roadmap
+
+
