@@ -1,3 +1,13 @@
+## Truth Settlement Layer (TSL)
+
+VATA is a blockchain-native system for economically settling contested factual claims.
+
+- Truth Ledger (Genesis): `truth-ledger/ledger.md`
+- Each entry includes a portable proof bundle (claim.json + receipts)
+
+Ethereum settles value. VATA settles truth.
+
+
 ## Foundry
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
