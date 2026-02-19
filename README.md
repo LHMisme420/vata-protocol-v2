@@ -27,6 +27,16 @@ https://book.getfoundry.sh/
 
 ### Build
 
+## Open Challenge
+
+Any individual may submit a bonded claim.
+
+If you believe a claim in the Truth Ledger is incorrect, you may post a bonded challenge referencing the Claim ID.
+
+Truth is not declared.
+Truth is economically settled.
+
+
 ```shell
 $ forge build
 ```
