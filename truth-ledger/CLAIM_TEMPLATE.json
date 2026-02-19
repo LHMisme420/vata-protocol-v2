@@ -1,0 +1,16 @@
+{
+  "vata_claim_version": "1.0",
+  "domain": "ai.forensics",
+  "statement": "",
+  "evidence_sha256": "",
+  "claim_id": "",
+  "claimant": "",
+  "challenger": "",
+  "stake_vata": "",
+  "bond_vata": "",
+  "resolution": "",
+  "payout_vata": "",
+  "stake_tx": "",
+  "bond_tx": "",
+  "payout_tx": ""
+}
