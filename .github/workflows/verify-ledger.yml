@@ -1,0 +1,19 @@
+name: Verify Truth Ledger
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Foundry (cast)
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: stable
+
+      - name: Verify claim determinism
+        run: pwsh -File truth-ledger/verify_ledger.ps1
