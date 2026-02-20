@@ -1,0 +1,9 @@
+{
+  "vata_claim_version": "1.0",
+  "domain": "ai.forensics",
+  "statement": "Model output contains poisoned reasoning",
+  "evidence_sha256": "",
+  "claimant": "0x32506a2b5bd991c904ca733cbf6f8fd0183ba6ce",
+  "timestamp_utc": "2026-02-18T23:44:36Z"
+}
+"claim_id": "0x...."

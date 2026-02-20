@@ -6,7 +6,7 @@ contract AnchorRegistry {
         uint64 chainId;
         bytes32 txHash;
         bytes32 payloadHash;
-        uint40  timestamp;
+        uint40 timestamp;
     }
 
     mapping(bytes32 => Anchor[]) private _anchors;
@@ -14,12 +14,9 @@ contract AnchorRegistry {
     event Anchored(bytes32 indexed claimId, uint64 indexed chainId, bytes32 txHash, bytes32 payloadHash);
 
     function anchor(bytes32 claimId, uint64 chainId, bytes32 txHash, bytes32 payloadHash) external {
-        _anchors[claimId].push(Anchor({
-            chainId: chainId,
-            txHash: txHash,
-            payloadHash: payloadHash,
-            timestamp: uint40(block.timestamp)
-        }));
+        _anchors[claimId].push(
+            Anchor({chainId: chainId, txHash: txHash, payloadHash: payloadHash, timestamp: uint40(block.timestamp)})
+        );
         emit Anchored(claimId, chainId, txHash, payloadHash);
     }
 

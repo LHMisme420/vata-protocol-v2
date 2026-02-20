@@ -1,0 +1,55 @@
+﻿{
+    "schema":  "truth-ledger-manifest-v1",
+    "created_at":  "2026-02-19T06:50:03.2155893-05:00",
+    "count":  6,
+    "items":  [
+                  {
+                      "claim":  "claim_0002.json",
+                      "root":  "0xc7f38951f2b9a271d9ec5e52d3cac1f0dda88c1239882ac3b93a628fa4688f66",
+                      "receipt":  "C:\\Users\\lhmsi\\vata-protocol-v2\\truth-ledger\\claims\\0xd9c54a9c47237c84307fb83f8fc0bf4651b4ca2099de2d55a53f5f4fe75ca1c4\\bond_receipt.txt",
+                      "tx":  "0x7e1180028978c5c876e9fb0ffe892e641a38f83cfb7286c3bb4ec7c25bad714f",
+                      "anchor":  "0xeefd39477c3a819af5531512e0d8368384888272",
+                      "chain_id":  11155111
+                  },
+                  {
+                      "claim":  "claim_0003.json",
+                      "root":  "0xe78378f956fbb2303750943fd3e9f44721213cdf083d9a31b2aea01ff5627067",
+                      "receipt":  "C:\\Users\\lhmsi\\vata-protocol-v2\\truth-ledger\\claims\\0xd9c54a9c47237c84307fb83f8fc0bf4651b4ca2099de2d55a53f5f4fe75ca1c4\\stake_receipt.txt",
+                      "tx":  "0x958e932739a8d0a505c68107cc04690c0aa8e6a0709d654aa406d744279762cd",
+                      "anchor":  "0xeefd39477c3a819af5531512e0d8368384888272",
+                      "chain_id":  11155111
+                  },
+                  {
+                      "claim":  "claim_0004.json",
+                      "root":  "0x17b2140595c62c6c317128cb0c82d981b1b8b25555d0e3fd8b457ef0b4bd5769",
+                      "receipt":  "C:\\Users\\lhmsi\\vata-protocol-v2\\truth-ledger\\claims\\0xd9c54a9c47237c84307fb83f8fc0bf4651b4ca2099de2d55a53f5f4fe75ca1c4\\payout_receipt.txt",
+                      "tx":  "0xPASTE_TX_HASH",
+                      "anchor":  "0xeefd39477c3a819af5531512e0d8368384888272",
+                      "chain_id":  11155111
+                  },
+                  {
+                      "claim":  "claim_0005.json",
+                      "root":  "0x17b2140595c62c6c317128cb0c82d981b1b8b25555d0e3fd8b457ef0b4bd5769",
+                      "receipt":  "C:\\Users\\lhmsi\\vata-protocol-v2\\truth-ledger\\claims\\0xd9c54a9c47237c84307fb83f8fc0bf4651b4ca2099de2d55a53f5f4fe75ca1c4\\payout_receipt.txt",
+                      "tx":  "0x63dae2276002402f09f48318162acd1aad2d8955edb72e84c60147b0dc40f115",
+                      "anchor":  "0xeefd39477c3a819af5531512e0d8368384888272",
+                      "chain_id":  11155111
+                  },
+                  {
+                      "claim":  "claim_0006.json",
+                      "root":  "0xc7f38951f2b9a271d9ec5e52d3cac1f0dda88c1239882ac3b93a628fa4688f66",
+                      "receipt":  "C:\\Users\\lhmsi\\vata-protocol-v2\\truth-ledger\\claims\\0xd9c54a9c47237c84307fb83f8fc0bf4651b4ca2099de2d55a53f5f4fe75ca1c4\\bond_receipt.txt",
+                      "tx":  "0xf27a538a4ad9c09954ce40ad802e8cd975f47460953a3bbec7a50227c5d61341",
+                      "anchor":  "0xeefd39477c3a819af5531512e0d8368384888272",
+                      "chain_id":  11155111
+                  },
+                  {
+                      "claim":  "claim_0007.json",
+                      "root":  "0xe78378f956fbb2303750943fd3e9f44721213cdf083d9a31b2aea01ff5627067",
+                      "receipt":  "C:\\Users\\lhmsi\\vata-protocol-v2\\truth-ledger\\claims\\0xd9c54a9c47237c84307fb83f8fc0bf4651b4ca2099de2d55a53f5f4fe75ca1c4\\stake_receipt.txt",
+                      "tx":  "0xc6fa7dc5109c439d11b34b7d3acb198708c9022dc52d3c02520e03a153aedd17",
+                      "anchor":  "0xeefd39477c3a819af5531512e0d8368384888272",
+                      "chain_id":  11155111
+                  }
+              ]
+}

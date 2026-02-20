@@ -16,7 +16,7 @@ contract ClaimRegistryTest is Test {
     MockVerifier mv;
 
     address alice = address(0xA11CE);
-    address bob   = address(0xB0B);
+    address bob = address(0xB0B);
 
     function setUp() public {
         token = new VATAToken(address(this));
@@ -30,7 +30,7 @@ contract ClaimRegistryTest is Test {
         reg = new ClaimRegistry(address(token), address(a), address(r));
 
         token.mint(alice, 10_000 ether);
-        token.mint(bob,   10_000 ether);
+        token.mint(bob, 10_000 ether);
 
         vm.prank(alice);
         token.approve(address(reg), type(uint256).max);

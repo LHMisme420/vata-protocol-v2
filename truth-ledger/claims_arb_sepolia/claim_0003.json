@@ -1,0 +1,15 @@
+{
+    "schema":  "truth-ledger-claim-v1",
+    "created_at":  "2026-02-19T07:07:30.4207500-05:00",
+    "epoch_id":  "epoch_0003",
+    "root":  "0xe78378f956fbb2303750943fd3e9f44721213cdf083d9a31b2aea01ff5627067",
+    "receipt_path":  "C:\\Users\\lhmsi\\vata-protocol-v2\\truth-ledger\\claims\\0xd9c54a9c47237c84307fb83f8fc0bf4651b4ca2099de2d55a53f5f4fe75ca1c4\\stake_receipt.txt",
+    "receipt_sha256":  "0xe78378f956fbb2303750943fd3e9f44721213cdf083d9a31b2aea01ff5627067",
+    "onchain":  {
+                    "chain":  "sepolia",
+                    "chain_id":  11155111,
+                    "anchor_address":  "0xfeb25cc30770f8aa68a99ed8eeffeee0fa39c951",
+                    "tx_hash":  "0xe3dbeebfc8cf4858fcd92b5b7c4e50f4bd56bc3d8d6aa00681f1d2fa6d21731c",
+                    "method":  "anchor(bytes32,uint64,bytes32,bytes32)"
+                }
+}

@@ -1,0 +1,14 @@
+{
+    "schema":  "truth-ledger-claim-v1",
+    "created_at":  "2026-02-19T07:17:28.7214414-05:00",
+    "epoch_id":  "epoch_0001",
+    "root":  "0x17b2140595c62c6c317128cb0c82d981b1b8b25555d0e3fd8b457ef0b4bd5769",
+    "receipt_path":  "C:\\Users\\lhmsi\\vata-protocol-v2\\truth-ledger\\claims\\0xd9c54a9c47237c84307fb83f8fc0bf4651b4ca2099de2d55a53f5f4fe75ca1c4\\payout_receipt.txt",
+    "receipt_sha256":  "0x17b2140595c62c6c317128cb0c82d981b1b8b25555d0e3fd8b457ef0b4bd5769",
+    "onchain":  {
+                    "chain_id":  0,
+                    "anchor_address":  "0x5e8da55e155d165ca80344269400289194435e88",
+                    "tx_hash":  "0xb73e83621dd3ca3d243c4bfacd4ca6414a3445fc8689aedf7c5cd294046718e3",
+                    "method":  "anchor(bytes32,uint64,bytes32,bytes32)"
+                }
+}
