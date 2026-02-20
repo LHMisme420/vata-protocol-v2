@@ -1,9 +1,19 @@
-﻿node_modules/
-target/
+﻿# Foundry / Solidity build artifacts
 out/
-build/
-.env
+cache/
+broadcast/
+
+# Logs / receipts
 *.log
-*.wtns
-*.zkey
-*.proof
+logs.txt
+*_logs.txt
+receipts/
+payout_stake_receipt.txt
+
+# Local artifacts
+*.txt
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
