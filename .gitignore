@@ -17,3 +17,8 @@ payout_stake_receipt.txt
 # OS
 .DS_Store
 Thumbs.db
+
+# Secrets
+.env
+.env.*
+
