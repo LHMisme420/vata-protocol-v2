@@ -1,95 +1,45 @@
-![Verify Truth Ledger](https://github.com/LHMisme420/vata-protocol-v2/actions/workflows/verify-ledger.yml/badge.svg)
+# VATA Protocol
 
+**Verifiable Anchored Truth Architecture (VATA)** is a deterministic cryptographic verification protocol for producing, validating, and permanently anchoring proofs of computation, reasoning, and data integrity.
 
+VATA allows any observer to independently verify that:
 
-## Truth Settlement Layer (TSL)
+- Specific inputs produced specific outputs  
+- The computation followed defined rules  
+- The result has not been altered  
+- The commitment is immutably anchored on a public blockchain  
 
-VATA is a blockchain-native system for economically settling contested factual claims.
+---
 
-- Truth Ledger (Genesis): `truth-ledger/ledger.md`
-- Each entry includes a portable proof bundle (claim.json + receipts)
+## Core Documents
 
-Ethereum settles value. VATA settles truth.
+- VATA-SPEC.md — Protocol specification  
+- ARCHITECTURE.md — System architecture  
+- THREAT_MODEL.md — Security assumptions and threat analysis  
 
+---
 
-## Foundry
+## High-Level Flow
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+1. Build deterministic epoch  
+2. Construct Merkle tree  
+3. Derive Merkle root  
+4. Generate cryptographic proof  
+5. Verify proof onchain  
+6. Anchor root  
+7. Produce receipt  
 
-Foundry consists of:
+---
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Design Principles
 
-## Documentation
+- Deterministic by default  
+- Trust-minimized  
+- Cryptography over reputation  
+- Public verifiability  
 
-https://book.getfoundry.sh/
+---
 
-## Usage
+## Status
 
-### Build
-
-## Open Challenge
-
-Any individual may submit a bonded claim.
-
-If you believe a claim in the Truth Ledger is incorrect, you may post a bonded challenge referencing the Claim ID.
-
-Truth is not declared.
-Truth is economically settled.
-### Roadmap
-
-VATA claims and challenges will execute on Optimism and Arbitrum for scalable dispute activity, with periodic anchoring and final economic settlement on Ethereum L1.
-
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```### Roadmap
-
-
+Active research & development.
