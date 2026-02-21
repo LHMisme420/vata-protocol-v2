@@ -1,0 +1,20 @@
+﻿{
+    "epoch":  6,
+    "created_utc":  "2026-02-21T21:09:54.6108295Z",
+    "author":  "0x32506a2b5bd991c904ca733CBf6f8FD0183BA6Ce",
+    "input_file":  "live.txt",
+    "sha256":  "0x768eef8bc0f094f19a8b105ef22f644758ae646475eae352383d09d0425618f8",
+    "root_bytes32":  "0x768eef8bc0f094f19a8b105ef22f644758ae646475eae352383d09d0425618f8",
+    "chains":  [
+                   {
+                       "chainId":  11155420,
+                       "name":  "op_sepolia",
+                       "rpc":  "https://sepolia.optimism.io"
+                   },
+                   {
+                       "chainId":  421614,
+                       "name":  "arb_sepolia",
+                       "rpc":  "https://sepolia-rollup.arbitrum.io/rpc"
+                   }
+               ]
+}

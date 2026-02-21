@@ -1,0 +1,16 @@
+﻿{
+    "epoch":  6,
+    "root_uint256":  "0x768eef8bc0f094f19a8b105ef22f644758ae646475eae352383d09d0425618f8",
+    "op":  {
+               "chainId":  11155420,
+               "registry":  "0xe0C202DF9D1d0187d84f4b94c8966cA6CD9c4d8e",
+               "rpc":  "https://sepolia.optimism.io",
+               "tx":  "0x0b110d18fea1b85cefdf4883241702a136f658f4fa2f3f1777e7969c88e113ce"
+           },
+    "arb":  {
+                "chainId":  421614,
+                "registry":  "0x1a88C73407e349F91E5C1DDb03e1300d24e2cC35",
+                "rpc":  "https://sepolia-rollup.arbitrum.io/rpc",
+                "tx":  "0x3558854b0d7238d160b116a98ad8ad545ce1d2052fdafa123fef8514363cf4e7"
+            }
+}
