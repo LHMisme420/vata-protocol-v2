@@ -1,0 +1,18 @@
+﻿{
+    "updated_utc":  "2026-02-21T22:45:35.4677679Z",
+    "op":  {
+               "chainId":  11155420,
+               "registry":  "0xe0C202DF9D1d0187d84f4b94c8966cA6CD9c4d8e",
+               "rpc":  "https://sepolia.optimism.io"
+           },
+    "arb":  {
+                "chainId":  421614,
+                "registry":  "0x1a88C73407e349F91E5C1DDb03e1300d24e2cC35",
+                "rpc":  "https://sepolia-rollup.arbitrum.io/rpc"
+            },
+    "base":  {
+                 "chainId":  84532,
+                 "registry":  "0xd4d1b7b7376353DC5B166d5741e99EEaD072dE08",
+                 "rpc":  "https://base-sepolia-rpc.publicnode.com"
+             }
+}
