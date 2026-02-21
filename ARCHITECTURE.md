@@ -1,122 +1,49 @@
-# VATA Protocol Architecture
 
-VATA is a Truth Settlement Layer (TSL) — a blockchain-native system for economically settling contested factual claims.
-
-Ethereum settles value.  
-VATA settles truth.
+No human trust assumptions exist beyond cryptography.
 
 ---
 
-## 1. Layered Design
+## 6. Failure Modes
 
-VATA is designed as a multi-layer system:
+| Failure | Result |
+|-------|-------|
+| Wrong inputs | Root mismatch |
+| Tampered output | Root mismatch |
+| Invalid proof | Verifier rejects |
+| Forged receipt | Onchain check fails |
+| Altered history | Blockchain consensus rejects |
 
-- Execution Layers (L2): Optimism, Arbitrum
-- Settlement Layer (L1): Ethereum
-- Data Layer: Truth Ledger (GitHub + IPFS compatible)
-- Client Layer: CLI / scripts / verifiers
-
-This separation enables scalability, low cost interaction, and high-finality settlement.
-
----
-
-## 2. Execution Layers (Optimism / Arbitrum)
-
-Responsibilities:
-
-- Accept claim submissions
-- Accept bonded challenges
-- Enforce staking and bonding rules
-- Emit claim and challenge events
-
-Properties:
-
-- Cheap transactions
-- High throughput
-- Fast confirmation
-
-These layers handle the majority of protocol activity.
+All failures are detectable.
 
 ---
 
-## 3. Settlement Layer (Ethereum L1)
+## 7. Scalability
 
-Responsibilities:
+- Only bytes32 roots stored onchain
+- Proofs verify in constant time
+- Artifacts stored offchain
 
-- Final economic settlement
-- Payout enforcement
-- Canonical state anchoring
-- Long-term permanence
-
-Ethereum is treated as the source of truth for final outcomes.
+VATA scales with storage and computation, not blockchain state.
 
 ---
 
-## 4. Truth Ledger
+## 8. Upgrade Strategy
 
-The Truth Ledger is a public, append-only index of economically settled claims.
+- Verifier contracts can be versioned
+- Anchor registry can support multiple verifier addresses
+- Epoch receipts include version metadata
 
-Each entry links to:
-
-- claim.json
-- stake receipt
-- bond receipt
-- payout receipt
-
-The ledger itself is not a database.
-
-It is a reproducible view over on-chain facts.
+Old epochs remain valid forever.
 
 ---
 
-## 5. Claim Identity
+## 9. Design Philosophy
 
-Claim ID = deterministic hash of canonical claim object.
-
-This ensures:
-
-- Content-addressed claims
-- Cross-chain portability
-- Immutable identity
-
-Claims are referenced by ID across all layers.
+- Minimal surface area
+- Deterministic by default
+- Cryptography over reputation
+- Auditability over opacity
 
 ---
 
-## 6. Economic Security Model
-
-Security derives from:
-
-- Claimant stake
-- Challenger bond
-- Slashing / payout enforcement
-- Open adversarial participation
-
-No trusted moderators exist.
-
-Only incentives and cryptography.
-
----
-
-## 7. Design Philosophy
-
-- Truth is not voted on.
-- Truth is not moderated.
-- Truth is economically settled.
-
-VATA does not decide what is true.
-
-VATA decides who pays when claims are wrong.
-
----
-
-## 8. Future Extensions
-
-- ZK proof integration for private evidence
-- Merkle inclusion proofs for large evidence sets
-- Cross-chain claim mirroring
-- Decentralized indexing of Truth Ledger
-
----
-
-End of document.
+End of Architecture.
