@@ -1,0 +1,16 @@
+VATA PROOF NUKE #2 ? LOCKED
+
+Public Signal:
+0x12f933665859506cd2b04d7f3655d5373ee75c7ea6da16141b80b2cc2266eb18
+
+Anchor Contract:
+0xdBe984C16FD6cAF05C2A741ADeB219f4989d479b
+
+Network:
+Base Sepolia (84532)
+
+Deployment TX:
+0x57aa30ce65659892e8b12ba3f608b6a71ad4c26ae0c06ebc04bf4c52cfb14653
+
+Timestamp:
+2026-02-22 02:22:58Z
