@@ -1,0 +1,10 @@
+{
+  "optimism_sepolia": {
+    "rpc": "https://sepolia.optimism.io",
+    "registry": "0xe0C202DF9D1d0187d84f4b94c8966cA6CD9c4d8e"
+  },
+  "arbitrum_sepolia": {
+    "rpc": "https://sepolia-rollup.arbitrum.io/rpc",
+    "registry": "0x1a88C73407e349F91E5C1DDb03e1300d24e2cC35"
+  }
+}

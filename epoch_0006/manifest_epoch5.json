@@ -1,0 +1,19 @@
+﻿{
+    "epoch":  5,
+    "created_utc":  "2026-02-21T20:56:10Z",
+    "chain_hint":  "421614",
+    "signer":  "0x32506a2b5bd991c904ca733CBf6f8FD0183BA6Ce",
+    "anchor":  "0x8347C87831a5bB2F4c79A0a4b117334D6247263e",
+    "files":  [
+                  {
+                      "name":  "onchain_receipt.txt",
+                      "sha256":  "e63852aef334e77b5f4a13ec6e9e4878ff6555c5cb91168cfcfe527ab0a575ee",
+                      "bytes":  207
+                  },
+                  {
+                      "name":  "proofs.json",
+                      "sha256":  "b958337a0b2c181e39097f929f6a4395323faf18ebf2693b31e6c7d5a21e2b1a",
+                      "bytes":  1015
+                  }
+              ]
+}

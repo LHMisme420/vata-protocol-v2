@@ -1,0 +1,8 @@
+﻿{
+  "chain":"opsepolia",
+  "chainId":11155420,
+  "registry":"0xFf42b9605EE6C592A10805761F756197D3d500e4",
+  "epoch":1,
+  "root":"0x47534ec5bd88ad5b673a0228b4b2017f558188a1a60ee7a998813396bcf93833",
+  "tx":"0xa09cb3414bf6fddb0a7ac22b1b8e34d108f6d65a76a6c138a7617037f1c6ba55"
+}

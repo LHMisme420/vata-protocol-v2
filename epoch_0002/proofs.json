@@ -1,0 +1,25 @@
+[
+    {
+        "path":  "claim_a.json",
+        "leaf":  "0x27c7430eb1b641933055318d2dc719ebb5aa74548bb0b0c4d46ce302183a9864",
+        "proof":  [
+                      "0x20dfa7411dcdeeb4cbda1be4fb3d2a9a1e86606fb1297ef88acf523c699070a9",
+                      "0x934a290b824920fd8f1f4f444652f4e09c1e7fdffb6c7b1b95ef699e8514e3ef"
+                  ]
+    },
+    {
+        "path":  "claim_b.json",
+        "leaf":  "0x20dfa7411dcdeeb4cbda1be4fb3d2a9a1e86606fb1297ef88acf523c699070a9",
+        "proof":  [
+                      "0x27c7430eb1b641933055318d2dc719ebb5aa74548bb0b0c4d46ce302183a9864",
+                      "0x934a290b824920fd8f1f4f444652f4e09c1e7fdffb6c7b1b95ef699e8514e3ef"
+                  ]
+    },
+    {
+        "path":  "claim_seed_0001.json",
+        "leaf":  "0x934a290b824920fd8f1f4f444652f4e09c1e7fdffb6c7b1b95ef699e8514e3ef",
+        "proof":  [
+                      "0x22e9753ab24df7d90b7bcef6c7dd41d3d712a4b3a3a0f6e34d9b8b26c406d194"
+                  ]
+    }
+]

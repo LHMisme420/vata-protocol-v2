@@ -1,0 +1,10 @@
+﻿{
+    "project":  "vata-protocol-v2",
+    "epoch":  2,
+    "created":  "2026-02-21T03:20:27.2956841-05:00",
+    "inputDir":  ".\\claims",
+    "fileCount":  3,
+    "merkleRoot":  "0xbc85d4e6da67d14c7b162647c513a92c95e9003379ff659f284ce267b98db597",
+    "leafFormat":  "leaf = keccak256( relPath + \u0027:\u0027 + sha256(fileBytesLowerHex) )",
+    "treeRule":  "pairHash = keccak256( sort(a,b) || sort(a,b) ) ; duplicate last leaf when odd"
+}

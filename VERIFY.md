@@ -1,0 +1,27 @@
+# VERIFY — VATA Receipt Verification (PowerShell)
+
+This guide verifies a VATA receipt end-to-end using PowerShell + Foundry `cast`.
+
+What we prove:
+- Contracts exist on-chain (bytecode present)
+- Proof TX exists and succeeded
+- The anchor contract emitted an event log that includes the commitment (bytes32)
+- We can extract block + event topics as evidence
+
+---
+
+## Prereqs
+- Windows PowerShell
+- Foundry installed (`cast` in PATH)
+- RPC access to the target chain
+
+---
+
+## Demo Values (replace with your receipt)
+
+```powershell
+$RPC="https://sepolia.gateway.tenderly.co"
+$ANCHOR="0x75272911A18Ea030e26d199547A7e5bcFBAB02Af"
+$VERIFIER="0xC5B42d2776a5336cBf7e0fe219bb2eeE4C3CBf70"
+$COMMIT="0xcebfffcb76f272eab1833d9bb57804af66d1f017e98d5144b522c0ed597187eb"
+$PROOF_TX="0x80458070c66197b99166a8aca4769ce4868b5d124850c417a66dfeeed2ff1c08"

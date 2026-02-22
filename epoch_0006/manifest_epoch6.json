@@ -1,0 +1,33 @@
+﻿{
+    "epoch":  6,
+    "created_utc":  "2026-02-21T21:01:26Z",
+    "signer":  "0x32506a2b5bd991c904ca733CBf6f8FD0183BA6Ce",
+    "anchor_op":  "0x8347C87831a5bB2F4c79A0a4b117334D6247263e",
+    "files":  [
+                  {
+                      "name":  "manifest_epoch5.json",
+                      "sha256":  "fc3d2f1d5255f2d20875752c2219363bf9481e9bcbd01d8ae6ba5adf8e28651e",
+                      "bytes":  726
+                  },
+                  {
+                      "name":  "manifest_epoch5.sha256.txt",
+                      "sha256":  "98ad8952f904ff20157b85ec64dece056c768201fb9b6292f051cbe8acddf082",
+                      "bytes":  66
+                  },
+                  {
+                      "name":  "manifest_epoch5.signature.txt",
+                      "sha256":  "3ab933813adfa2041a01df2e14bf9763bc126c6f31c82f150b288df1de13e6c6",
+                      "bytes":  134
+                  },
+                  {
+                      "name":  "onchain_receipt.txt",
+                      "sha256":  "e63852aef334e77b5f4a13ec6e9e4878ff6555c5cb91168cfcfe527ab0a575ee",
+                      "bytes":  207
+                  },
+                  {
+                      "name":  "proofs.json",
+                      "sha256":  "b958337a0b2c181e39097f929f6a4395323faf18ebf2693b31e6c7d5a21e2b1a",
+                      "bytes":  1015
+                  }
+              ]
+}
